@@ -1,0 +1,47 @@
+\documentclass[varwidth]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+
+\definecolor{color1}{HTML}{0B84A5}
+\definecolor{color2}{HTML}{F6C85F}
+\definecolor{color3}{HTML}{6F4E7C}
+\definecolor{color4}{HTML}{9DD866}
+\definecolor{color5}{HTML}{CA472F}
+\definecolor{color6}{HTML}{FFA056}
+\definecolor{color7}{HTML}{8DDDD0}
+
+
+\begin{document}
+
+
+    \large
+    \begin{tikzpicture}
+        \begin{axis}[%
+                width=0.9\columnwidth,
+                height=0.75\columnwidth,
+                xlabel = {$\mathrm{E}[T_{\mathrm{opt}}] / n^2$},
+                ylabel = {relative no. of portfolios with an optimal policy with expected run time $\leq \mathrm{E}[T_{\mathrm{opt}}]$},
+                ylabel style = {align = center, text width = 9 cm},
+                legend pos = north west,
+                legend style={draw=none},
+                legend cell align=left,
+            ]
+            \addplot+[%
+                mark=x,
+                color1,
+                mark size=3,
+                thick
+            ]
+            table[x=relative_run_time,y=relative_amount]{../../../information/cumulative_optimal_policies/n=50_k=3};
+            \addplot[color6, mark=x, mark size=3, very thick, nodes near coords=\textbf{Powers of~$2$ (0.398219)},every node near coord/.style={anchor=170}] coordinates {(0.398219, 0.0102041)};
+            \addplot[color6, mark=x, mark size=3, very thick, nodes near coords=\textbf{Initial segment (0.40422)},every node near coord/.style={anchor=177}] coordinates {(0.40422, 0.0552721)};
+            \addplot[color6, mark=x, mark size=3, very thick, nodes near coords=\textbf{Evenly spread (0.449672)},every node near coord/.style={anchor=163,text width=3cm}] coordinates {(0.449672, 0.544218)};
+        \end{axis}
+    \end{tikzpicture}
+
+
+\end{document}

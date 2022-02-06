@@ -1,0 +1,78 @@
+\documentclass[varwidth]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+
+\definecolor{color1}{HTML}{0B84A5}
+\definecolor{color2}{HTML}{F6C85F}
+\definecolor{color3}{HTML}{6F4E7C}
+\definecolor{color4}{HTML}{9DD866}
+\definecolor{color5}{HTML}{CA472F}
+\definecolor{color6}{HTML}{FFA056}
+\definecolor{color7}{HTML}{8DDDD0}
+
+
+\begin{document}
+
+
+    \large
+    \begin{tikzpicture}
+        \begin{axis}[%
+                width=0.85\columnwidth,
+                height=0.45\columnwidth,
+                xlabel = $k$,
+                xtick = {2, 3, 4, 5, 6, 7, 8, 10, 15, 20},
+                ylabel = {$\mathrm{E}[T_{\mathrm{opt}}]/n^2$},
+                legend pos = north east,
+                legend style={draw=none},
+                legend cell align=left,
+            ]
+        % Powers of 2 start
+            \addplot+[%
+                mark=x,
+                color1,
+                mark size=3,
+                thick
+            ]
+            table[x=k,y=rel-rt]{../../../plot_data/vary_k/optimal/n=50_powers_of_2};
+        % Powers of 2 end
+
+        % Initial segment start
+            \addplot+[%
+                mark=triangle,
+                color2,
+                mark size=3,
+                thick
+            ]
+            table[x=k,y=rel-rt]{../../../plot_data/vary_k/optimal/n=50_initial_segment};
+        % Initial segment end
+
+        % Evenly spread start
+            \addplot+[%
+                mark=o,
+                color3,
+                mark size=3,
+                thick
+            ]
+            table[x=k,y=rel-rt]{../../../plot_data/vary_k/optimal/n=50_evenly_spread};
+        % Evenly spread end
+
+        % Optimal start
+            \addplot+[%
+                mark=diamond,
+                color4,
+                mark size=3,
+                thick
+            ]
+            table[x=k,y=rel-rt]{../../../plot_data/vary_k/optimal/n=50_optimal_portfolio};
+        % Optimal end
+
+            \legend{Powers of~$2$, Initial segment, Evenly spread, Optimal portfolio};
+        \end{axis}
+    \end{tikzpicture}
+
+
+\end{document}
