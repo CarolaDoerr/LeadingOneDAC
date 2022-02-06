@@ -1,0 +1,13 @@
+nohup: ignoring input
+[I 2022-01-28 10:49:24.771 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-01-28 10:49:25.055 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-01-28 10:49:25.103 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-01-28 10:49:25.104 LabApp] JupyterLab extension loaded from /home/doerr/nguyen/softwares/miniconda3/lib/python3.9/site-packages/jupyterlab
+[I 2022-01-28 10:49:25.104 LabApp] JupyterLab application directory is /home/doerr/nguyen/softwares/miniconda3/share/jupyter/lab
+[I 2022-01-28 10:49:25.109 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-01-28 10:49:25.109 ServerApp] The port 9001 is already in use, trying another port.
+[I 2022-01-28 10:49:25.110 ServerApp] Serving notebooks from local directory: /home/doerr/nguyen/dacbench-onell
+[I 2022-01-28 10:49:25.110 ServerApp] Jupyter Server 1.13.4 is running at:
+[I 2022-01-28 10:49:25.110 ServerApp] http://localhost:9002/lab
+[I 2022-01-28 10:49:25.110 ServerApp]  or http://127.0.0.1:9002/lab
+[I 2022-01-28 10:49:25.110 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
